@@ -1,6 +1,13 @@
 import $ from 'jquery'
 import './index.css';
 
-$('#main').text('Hello, webpack!');
+declare global {
+  const SHOW_SECRET: boolean
+}
 
-console.trace('Hello')
+$('#main').text(
+  SHOW_SECRET
+    ? 'yes, SHOW_SECRET! (111)'
+    : 'no SHOW_SECRET! (222)'
+);
+

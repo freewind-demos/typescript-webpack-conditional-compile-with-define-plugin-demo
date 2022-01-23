@@ -1,4 +1,4 @@
-import {Configuration} from 'webpack';
+import webpack, {Configuration} from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 
@@ -26,6 +26,9 @@ const config: Configuration = {
     }]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      SHOW_SECRET: true
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }) as any
